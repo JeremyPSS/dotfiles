@@ -561,7 +561,7 @@ tab,
 /* THIS IS WHERE URL WITH EXPAND */
 #main-window #urlbar {
     z-index: 9999 !important;
-    width: 30% !important; /*WAS 100%*/
+    width: 50% !important; /*WAS 100%*/
     margin-top: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -903,7 +903,7 @@ tab,
   min-width: var(--sidebar-width) !important;
   width: var(--sidebar-width) !important;
   max-width: var(--sidebar-width) !important;
-  z-index: 10; /*was 1*/
+  z-index: 1;
 }
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]>#sidebar {
@@ -966,6 +966,130 @@ tab,
     border: 3px solid rgba(51, 51, 51, 0.6);
     box-shadow: 0 0 10px 5px rgba(255,255,255,0.5);
 }
+}
+
+/*============================================================================================*/
+/* SIDE BAR 2 (FLOORP) */
+
+/* Make splitter invisible */ 
+
+#sidebar-splitter2 {
+  appearance: none !important;
+  width: 10px !important;;  /* Set initial width */
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;  /* Add transitions */
+}
+
+#sidebar-splitter2:hover {
+  width: 20px !important;  /* Width on hover */
+  opacity: 1;  /* Opacity on hover */
+}
+
+
+/*------------------------------------------------*/
+/* Hide Floorp sidebar header */
+
+#sidebar2-header  {
+    max-height: 0.5em !important;
+    min-height: 0.5em !important;
+    opacity: 0 !important;
+    transition: max-height 0.3s ease-in-out, min-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#sidebar2-header:hover  {
+    max-height: 2.5em !important;
+    min-height: 2.5em !important;
+    opacity: 1 !important;
+}
+
+
+/*------------------------------------------------*/
+/* Floorp Sidebar Border */
+
+@media (prefers-color-scheme: dark) {
+#sidebar2-box browser {
+    border-radius: 15px !important;
+    margin: 15px 15px 15px 0px !important;
+    border: 3px solid rgba(0, 0, 0, 0);
+    transition: border 0.3s ease;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
+}
+
+#sidebar2-box browser:hover {
+    border: 3px solid rgba(204, 204, 204, 0.6);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
+}
+}
+
+@media (prefers-color-scheme: light)  {
+#sidebar2-box browser {
+    border-radius: 15px !important;
+    margin: 15px 15px 15px 0px !important;
+    border: 3px solid rgba(51, 51, 51, 0.1);
+    transition: border 0.3s ease;
+    box-shadow: 0 0 10px 5px rgba(255,255,255,0.5);
+}
+
+#sidebar2-box browser:hover {
+    border: 3px solid rgba(51, 51, 51, 0.6);
+    box-shadow: 0 0 10px 5px rgba(255,255,255,0.2);
+}
+}
+
+/*------------------------------------------------*/
+/* Floorp Sidebar Select Box Styling */
+
+#sidebar-select-box {
+    align-items: center !important;
+    background-color: transparent !important;
+}
+
+.sidepanel-icon {
+    border-radius: 10px !important;
+}
+
+/*------------------------------------------------*/
+/* Floorp Sidebar Border */
+
+@media (prefers-color-scheme: dark) {
+#sidebar-select-box {
+    border-radius: 15px !important;
+    margin: 15px 10px 15px 15px !important;
+    border: 3px solid rgba(204, 204, 204, 0) !important;
+    transition: border 0.3s ease;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
+}
+
+#sidebar-select-box:hover {
+    border: 3px solid rgba(204, 204, 204, 0.6) !important;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
+}
+}
+
+@media (prefers-color-scheme: light)  {
+#sidebar-select-box {
+    border-radius: 15px !important;
+    margin: 15px 10px 15px 15px !important;
+    border: 3px solid rgba(51, 51, 51, 0.1) !important;
+    transition: border 0.3s ease;
+    box-shadow: 0 0 10px 5px rgba(255,255,255,0.5);
+}
+
+#sidebar-select-box:hover {
+    border: 3px solid rgba(51, 51, 51, 0.6) !important;
+    box-shadow: 0 0 10px 5px rgba(255,255,255,0.5);
+}  
+}
+
+/*------------------------------------------------*/
+/* Hide random stuff coming out of Floorp Sidebar */
+
+.browser-sidebar2 {
+	border: none !important;
+	border-bottom: none !important;
+}
+
+#sidebar2-box[style="min-width: 0px; order: 6; width: 415px; max-width: 0px;"] > * {
+  display: none !important;
 }
 
 /*============================================================================================*/
